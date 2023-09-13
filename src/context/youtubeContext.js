@@ -7,7 +7,7 @@ export const AppProvider = ({ children }) => {
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "c90a9df81dmsh00d9066c44d07aap119c16jsn74a3cd2cfb49",
+    "X-RapidAPI-Key": "secret-key",
     "X-RapidAPI-Host": "youtube138.p.rapidapi.com",
   },
 };
