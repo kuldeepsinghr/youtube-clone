@@ -4,6 +4,7 @@ import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import SuggestionVideo from '../components/SuggestionVideo';
 import { useParams } from 'react-router-dom';
 import { useYoutube } from '../context/youtubeContext';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const Video = () => {
 
@@ -49,7 +50,7 @@ const Video = () => {
   },[])
 
   // console.log(videoDetail)
-  console.log(relatedVideo)
+  // console.log(relatedVideo)
 
   return (
     <>
@@ -79,9 +80,9 @@ const Video = () => {
                 <div className='flex flex-col ml-3'>
                   <div className='text-white text-md font-semibold flex items-center'>
                     {videoDetail?.author?.title}
-                  {/* {video?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className='text-white/[0.5] text-[12px] ml-1'/>
-                  )} */}
+                  {videoDetail?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
+                    <VerifiedIcon className='text-white/[0.5] text-[10px] ml-1'/>
+                  )}
                     </div>
                     <div className='text-white/[0.7] text-sm'>{videoDetail?.author?.stats?.subscribersText}</div>
                 </div>
@@ -104,7 +105,8 @@ const Video = () => {
           <div className='flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]'>
             {
               relatedVideo.map((elem)=>{
-                return (                  
+                return elem.type === "video" &&
+                (                  
                   <SuggestionVideo
                     key={elem?.video?.videoId}
                     data={elem}

@@ -40,7 +40,8 @@ const SearchResult = () => {
                 <div className='grid grid-cols-1 gap-2 p-5'>
                   {
                     allSearch.map((elem) => {
-                      return (
+                      return elem.type === "video" &&
+                       (
                         <SearchResultVideo
                           key={elem?.video?.videoId}
                           data={elem}

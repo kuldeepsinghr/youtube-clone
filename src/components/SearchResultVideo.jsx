@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const SearchResultVideo = ({ data }) => {
   const navigate = useNavigate()
@@ -28,9 +29,9 @@ const SearchResultVideo = ({ data }) => {
               <div className='flex flex-col'>
                 <span className='text-sm font-semibold mt-2 text-white/[0.7] flex items-center '>
                   {data?.video?.author?.title}
-                  {/* {video?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className='text-white/[0.5] text-[12px] ml-1'/>
-                  )} */}
+                  {data?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
+                    <VerifiedIcon className='text-white/[0.5] text-[12px] ml-1'/>
+                  )}
                 </span>
                 <div className='flex text-sm font-semibold text-white/[0.7] truncate overflow-hidden'>
                   <span>{`${data?.video?.stats?.views} views`}</span>

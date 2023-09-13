@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const VideoCard = ({data}) => {
   // console.log(data)
@@ -26,9 +27,9 @@ const VideoCard = ({data}) => {
                 <span className='text-sm font-bold line-clamp-2'>{data?.video?.title}</span>
                 <span className='text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center'>
                   {data?.video?.author?.title}
-                  {/* {video?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className='text-white/[0.5] text-[12px] ml-1'/>
-                  )} */}
+                  {data?.author?.badges[0]?.type==="VERIFIED_CHANNEL" && (
+                    <VerifiedIcon fontSize='30' className='text-white/[0.5] text-[12px] ml-1'/>
+                  )}
                   </span>
                   <div className='flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden'>
                     <span>{`${data?.video?.stats?.views} views`}</span>
