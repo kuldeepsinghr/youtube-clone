@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import LeftNav from '../components/LeftNav'
 import VideoCard from '../components/VideoCard'
 import { useYoutube } from '../context/youtubeContext'
